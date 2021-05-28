@@ -69,13 +69,12 @@ public class MainActivity extends AppCompatActivity {
         // xuất hiện mấy lần và in ra vị trí mà nó xuất hiện
 
         int count = 0;
-        int valueRandom = 0;
+        int valueRandom = new Random().nextInt(10) + 1;
         String textIndexAppearance = "";
         int arrNumbers[] = new int[10];
 
-        valueRandom = new Random().nextInt(11);
         for (int i = 0; i < arrNumbers.length ; i++) {
-            arrNumbers[i] = new Random().nextInt(11);
+            arrNumbers[i] = new Random().nextInt(10) + 1;
             Log.d("BBB" ," Giá trị trong mảng " + arrNumbers[i]);
             if (arrNumbers[i] == valueRandom){
                 count++;
