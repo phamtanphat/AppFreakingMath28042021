@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     TextView mTvScore, mTvCalculator, mTvResult;
     ImageButton mImgBtnWin, mImgBtnLose;
     int mNumber1 = 0, mNumber2 = 0, mIndexCalculator = -1, mResult = -1;
+    boolean mIsTrue;
     Random mRandom;
 
     @Override
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         mNumber1 = mRandom.nextInt(9) + 1;
         mNumber2 = mRandom.nextInt(9) + 1;
+        mIsTrue = mRandom.nextBoolean();
         mIndexCalculator = mRandom.nextInt(4);
 
 
@@ -41,24 +43,25 @@ public class MainActivity extends AppCompatActivity {
             case 0:
                 mResult = mNumber1 + mNumber2;
                 mTvCalculator.setText(mNumber1 + " + " + mNumber2);
-                mTvResult.setText(" = " + mResult );
                 break;
             case 1:
                 mResult = mNumber1 - mNumber2;
                 mTvCalculator.setText(mNumber1 + " - " + mNumber2);
-                mTvResult.setText(" = " + mResult );
                 break;
             case 2:
                 mResult = mNumber1 * mNumber2;
                 mTvCalculator.setText(mNumber1 + " * " + mNumber2);
-                mTvResult.setText(" = " + mResult );
                 break;
             case 3:
                 mResult = mNumber1 / mNumber2;
                 mTvCalculator.setText(mNumber1 + " / " + mNumber2);
-                mTvResult.setText(" = " + mResult );
                 break;
         }
+
+        if (!mIsTrue) {
+            mResult += mRandom.nextInt(10) + 1;
+        }
+        mTvResult.setText(" = " + mResult);
         // random 2 số ngẫu nhiên
         // random 1 toán tử ngẫu nhiên
         // random kết quả
